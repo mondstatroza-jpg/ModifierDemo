@@ -26,6 +26,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.modifierdemo.ui.theme.ModifierDemoTheme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.height
 import androidx.compose.ui.res.painterResource
 
 class MainActivity : ComponentActivity() {
@@ -50,6 +51,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     val mymodifier = modifier
         .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
+    val secondModifier = Modifier.height(100.dp)
 
     Column(
         Modifier.padding(20.dp),
@@ -58,7 +60,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     ) {
         Text(
             "Hello Compose",
-            mymodifier,
+            mymodifier.then(secondModifier),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
