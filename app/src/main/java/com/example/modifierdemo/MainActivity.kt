@@ -48,8 +48,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
     val mymodifier = modifier
-        .padding(all = 10.dp)
         .border(width = 2.dp, color = Color.Black)
+        .padding(all = 10.dp)
 
     Column(
         Modifier.padding(20.dp),
@@ -62,6 +62,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
+        CustomImage(image = R.drawable.vacation)
     }
 }
 
