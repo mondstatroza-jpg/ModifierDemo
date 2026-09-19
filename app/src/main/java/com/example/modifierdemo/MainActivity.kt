@@ -25,6 +25,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.modifierdemo.ui.theme.ModifierDemoTheme
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +48,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
     val mymodifier = modifier
-        .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
+        .border(width = 2.dp, color = Color.Black)
 
     Column(
         Modifier.padding(20.dp),
@@ -68,4 +71,12 @@ fun DemoScreenPreview() {
     ModifierDemoTheme {
         DemoScreen()
     }
+}
+
+@Composable
+fun CustomImage(image: Int) {
+    Image(
+        painter = painterResource(image),
+        contentDescription = null
+    )
 }
